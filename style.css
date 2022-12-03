@@ -1,0 +1,75 @@
+:root {
+    font-size: 18px;
+    --nav-width: 20px;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+#sidebar {
+    background-color: rgb(75, 59, 59);
+    padding: 30px 30px 30px 35px;
+}
+
+div.logo {
+    display: grid;
+    grid-template-columns : 24px auto;
+    justify-items: center;
+    align-items: center;
+    column-gap: 13px;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+div.logo-text, div.nav-text {
+    justify-self: start;
+}
+
+div.nav {
+    display: grid;
+    grid-template-columns : var(--nav-width) auto;
+    justify-items: center;
+    align-items: center;
+    column-gap: 20px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+div.nav svg {
+    width: var(--nav-width);
+    height: 20px;
+}
+
+div.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+div.nav-text {
+    align-self: center;
+}
+
+#sidebar div:nth-child(7){
+    margin-bottom: 40px;
+}
+
+#main-column {
+    display: grid;
+    grid-template-rows: 1fr 4fr ;
+}
+
+.header {
+    background-color: lightgray;
+}
+
+.main-content {
+    background-color: pink;
+}
