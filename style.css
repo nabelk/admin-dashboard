@@ -14,6 +14,8 @@ body {
     grid-template-columns: 1fr 4fr;
 }
 
+/* Sidebar */
+
 #sidebar {
     background-color: rgb(75, 59, 59);
     padding: 30px 30px 30px 35px;
@@ -61,16 +63,21 @@ div.nav-text {
     margin-bottom: 40px;
 }
 
+/* Main column */
+
 #main-column {
     display: grid;
     grid-template-rows: 1fr 3fr ;
 }
 
+/* Header of main column */
+
 div.header {
     background-color: lightgray;
     display: grid;
     grid-template-rows: 40% 60%;
-    grid-template-columns: 60% 40% ;
+    grid-template-columns: 55% 45% ;
+    padding: 10px;
 }
 
 div.header > div:first-child{
@@ -81,6 +88,8 @@ div.header > div:first-child{
     padding: 25px;
     gap: 10px;
 }
+
+/* Search section of header */
 
 div.search svg {
     fill: black;
@@ -100,15 +109,62 @@ input[type="search"] {
     padding: 5px 10px 5px 10px;
 }
 
+/* Profile setting of header */
+
 div.header > div:nth-child(2) {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
+    padding-top: 6px;
+    padding-right: 50px;
 }
 
+/* Profile handler of header */
+
+div.header > div:nth-child(3){
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:  "icon welcome" "icon welcome";
+    align-items: center;
+    padding-left: 30px;
+    column-gap: 20px;
+}
+
+.profile-handler div:first-child{
+    grid-area: icon;
+}
+
+.profile-handler div:nth-child(2){
+    grid-area: welcome;
+}
+
+.profile-handler div:nth-child(2) > span:first-child {
+    font-size: 0.8rem;
+}
+
+.profile-handler div:nth-child(2) > span:nth-child(3) {
+    font-size: 1.3rem;
+}
+
+/* Button section of header  */
+
 div.header > div:nth-child(4){
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-items: start;
     grid-column: 2;
+    padding-top: 6px;
+}
+
+button {
+    border-radius: 15px;
+    border: none;
+    padding: 5px 15px 5px 15px;
+    width: 80%;
+    cursor: pointer;
 }
 
 .main-content {
