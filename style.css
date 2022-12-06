@@ -1,23 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+
 :root {
     font-size: 18px;
     --nav-width: 20px;
-    color: white;
+    --main-theme: #064e3b;
+    --card-color: #a1a1aa;
+    --main-column-color: #737373;
 }
 
 * {
     box-sizing: border-box;
+    color: #fafaf9;
 }
 
 body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    font-family: 'Readex Pro', sans-serif;
 }
 
 /* Sidebar */
 
 #sidebar {
-    background-color: rgb(75, 59, 59);
+    background-color: var(--main-theme) ;
     padding: 30px 30px 30px 35px;
 }
 
@@ -33,6 +39,10 @@ div.logo {
 
 div.logo-text, div.nav-text {
     justify-self: start;
+}
+
+div.logo svg, div.nav svg {
+    cursor: pointer;
 }
 
 div.nav {
@@ -51,7 +61,6 @@ div.nav svg {
 }
 
 div.nav a {
-    color: white;
     text-decoration: none;
 }
 
@@ -67,13 +76,13 @@ div.nav-text {
 
 #main-column {
     display: grid;
-    grid-template-rows: 1fr 4fr ;
+    grid-template-rows: 1fr 5fr;
 }
 
 /* Header of main column */
 
 div.header {
-    background-color: lightgray;
+    background-color: var(--main-column-color);
     display: grid;
     grid-template-rows: 40% 60%;
     grid-template-columns: 55% 45% ;
@@ -165,25 +174,31 @@ button {
     padding: 5px 15px 5px 15px;
     width: 80%;
     cursor: pointer;
+    font-family: 'Readex Pro', sans-serif;
+    background-color: var(--main-theme);
 }
 
 /* Main content of main column */
 
 div.main-content {
     display: grid;
-    grid-template: 1fr 1fr / 68% 1fr;
-    background-color: pink;
-    padding: 20px 20px 25px 18px;
-    color: grey;
-    gap: 15px;
+    grid-template: auto 1fr / 3fr 1fr;
+    background-color: var(--main-column-color);
+    padding: 25px 20px 25px 20px;
+    gap: 25px;
 }
 
 h5, h4 {
     margin:0;
+    font-weight: bold;
 }
 
 div.main-content h4 {
     margin-bottom: 10px;
+}
+
+div.main-content h5 {
+    color: var(--main-theme);
 }
 
 div.main-content p {
@@ -201,11 +216,10 @@ div.project-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap:15px;
-    
 }
 
 div.card {
-    background-color: black;
+    background-color: var(--card-color);
     padding: 20px;
     border-radius: 5px;
 }
@@ -225,6 +239,7 @@ div.nav-card svg {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    fill: var(--main-theme);
 }
 
 /* Announcement of main content  */
@@ -233,7 +248,7 @@ div.announce-contents {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: orange;
+    background-color: var(--card-color);
     padding: 20px;
     border-radius: 5px;
 }
@@ -249,7 +264,7 @@ div.announce-contents div:nth-child(-n+2) {
 /* Trending section of main content  */
 
 div.public-users {
-    background-color: antiquewhite;
+    background-color: var(--card-color);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -260,7 +275,6 @@ div.public-users {
 div.public-users > div {
     display: flex;
     gap:15px;
-    flex-wrap: wrap;
 }
 
 div.public-users img {
@@ -276,4 +290,26 @@ div.public-users > div > div:nth-child(2) {
 span.public a {
     font-weight: bold;
     text-decoration: none;
+    color: var(--main-theme);
+}
+
+@media only screen and (max-width:1037px){
+
+    body{
+        grid-template-columns: auto 1fr;
+    }
+
+    #main-column {
+        grid-template-rows: 1fr 8fr;
+    }
+
+    div.main-content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.logo-text, div.nav-text {
+        display: none;
+    }
+
 }
