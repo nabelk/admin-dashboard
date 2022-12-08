@@ -19,6 +19,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr;
     font-family: 'Readex Pro', sans-serif;
+    cursor: default;
 }
 
 /* Sidebar */
@@ -41,6 +42,7 @@ div.logo {
 div.logo-text{
     text-shadow: 0 2px 2px #dfdfdf, -2px 5px 1px #b8b8b8;
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 div.logo-text, div.nav-text {
@@ -66,7 +68,7 @@ div.nav svg {
     height: 20px;
 }
 
-div.nav a {
+a {
     text-decoration: none;
 }
 
@@ -95,6 +97,8 @@ div.header {
     padding: 10px;
 }
 
+/* Search section of header */
+
 div.header > div:first-child{
     grid-column: 1/2;
     display: flex;
@@ -103,8 +107,6 @@ div.header > div:first-child{
     padding: 25px;
     gap: 10px;
 }
-
-/* Search section of header */
 
 div.search svg {
     fill: black;
@@ -136,6 +138,23 @@ div.header > div:nth-child(2) {
     padding-right: 50px;
 }
 
+div.small-profile-icon {
+    width: 42px;
+    height: 42px;
+    background-color: aquamarine;
+    color: black;
+    font-weight: bolder;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+}
+
+div.profile-setting div:nth-child(-n+2) {
+    cursor: pointer;
+}
+
 /* Profile handler of header */
 
 div.header > div:nth-child(3){
@@ -150,6 +169,17 @@ div.header > div:nth-child(3){
 
 .profile-handler div:first-child{
     grid-area: icon;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    background-color: aquamarine;
+    color: black;
+    font-weight: bolder;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
 }
 
 .profile-handler div:nth-child(2){
@@ -184,6 +214,14 @@ button {
     font-family: 'Readex Pro', sans-serif;
     background-color: var(--main-theme);
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+button:active {
+    transform: translateY(-2px);
+}
+
+button:hover {
+    background-color: lightgoldenrodyellow;
 }
 
 /* Main content of main column */
@@ -231,6 +269,8 @@ div.card {
     padding: 20px;
     border-radius: 5px;
     box-shadow: var(--card-shadow);
+    display: grid;
+    grid-template-rows: auto 1fr auto ;
 }
 
 div.card p {
@@ -292,6 +332,7 @@ div.public-users img {
     width: 50px;
     height: 50px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 div.public-users > div > div:nth-child(2) {
@@ -332,6 +373,15 @@ span.public a {
 
     input[type="search"] {
         width:91%;
+    }
+
+}
+
+/* Media query for monitor */
+
+@media only screen and (min-width:1400px) {
+    :root{
+        font-size: 19px;
     }
 
 }
