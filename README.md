@@ -22,17 +22,17 @@
     Normalize.css is being used in this project to override default browser style.
     
 ### Javascript & Vanilla JS
-    A script written is for sidebar transistion and manipulate profile icon, name & username.
+    A script written is for sidebar transition and manipulate profile icon, name & username.
     
 
 ## Features
-- Transistion sidebar when width of the page is compact.
+- Transition sidebar when width of the page is compact.
 - Responsive card elements.
 - Responsive design (web, tablet & mobile).
 
 ## Screenshots
 ![Full page](screenshot/full-page.png)
-![Sidebar transistion](screenshot/sidebar-transistion.png)
+![Sidebar transition](screenshot/sidebar-transition.png)
 
 ## Room for Improvement
 - Position for header of #main-column for mobile view.
